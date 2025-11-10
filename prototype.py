@@ -16,7 +16,7 @@ client = Client(account_sid, auth_token)
 def send_message(number, message):
     try:
         msg = client.messages.create(
-            from_=[twilio][whatsapp_no],
+            from_=["twilio"]["whatsapp_no"],
             body=message,
             to = f'whatsapp:{number}'
         )
@@ -62,3 +62,4 @@ if st.button('Enter to send Msg'):
         time.sleep(delay_sec)
         send_message(recip_no, msg_body)
         st.success(f"Message scheduled to send at {schedule_date}")
+
