@@ -7,8 +7,8 @@ import streamlit as st
 import pandas as pd
 
 #Setup Twilio
-account_sid = ["twilio"]["account_sid"]
-auth_token = ["twilio"]["auth_token"]
+account_sid = st.secrets["twilio"]["account_sid"]
+auth_token = st.secrets["twilio"]["auth_token"]
 
 client = Client(account_sid, auth_token)
 
@@ -16,7 +16,7 @@ client = Client(account_sid, auth_token)
 def send_message(number, message):
     try:
         msg = client.messages.create(
-            from_=["twilio"]["whatsapp_no"],
+            from_=st.secrets["twilio"]["whatsapp_no"],
             body=message,
             to = f'whatsapp:{number}'
         )
@@ -62,4 +62,5 @@ if st.button('Enter to send Msg'):
         time.sleep(delay_sec)
         send_message(recip_no, msg_body)
         st.success(f"Message scheduled to send at {schedule_date}")
+
 
