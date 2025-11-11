@@ -67,9 +67,10 @@ if st.button('Enter to send Msg'):
 
 
         #4. Send Message
-        time.sleep(delay_sec)
+        #time.sleep(delay_sec)
         send_message(recip_no, msg_body)
         st.success(f"Message scheduled to send at {schedule_date}")
+
 
 
 
