@@ -47,7 +47,7 @@ name = st.text_input('Enter the Name of user: ')
 no = st.text_input('Enter the receiptent number: ')
 msg_body = st.text_input('enter the message u want to send')
 
-#date_str = st.text_input('Enter the date to send the message(YYYY/MM/DD): ')
+date_str = st.text_input('Enter the date to send the message(YYYY-MM-DD): ')
 #time_str = st.text_input('Enter thr time to send (HH:MM): ')
 
 recip_no = '+91' + no
@@ -70,6 +70,7 @@ if st.button('Enter to send Msg'):
         #time.sleep(delay_sec)
     send_message(recip_no, msg_body)
     st.success(f"Message scheduled to send at {schedule_date}")
+
 
 
 
