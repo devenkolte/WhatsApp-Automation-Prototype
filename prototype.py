@@ -6,6 +6,14 @@ import time
 import streamlit as st
 import pandas as pd
 
+#chech
+import streamlit as st, sys, os
+
+st.write("✅ Python version:", sys.version)
+st.write("✅ Working directory:", os.getcwd())
+st.write("✅ Files in current directory:", os.listdir())
+st.write("✅ Secrets loaded:", "twilio" in st.secrets)
+
 #Setup Twilio
 account_sid = st.secrets["twilio"]["account_sid"]
 auth_token = st.secrets["twilio"]["auth_token"]
@@ -62,5 +70,6 @@ if st.button('Enter to send Msg'):
         time.sleep(delay_sec)
         send_message(recip_no, msg_body)
         st.success(f"Message scheduled to send at {schedule_date}")
+
 
 
