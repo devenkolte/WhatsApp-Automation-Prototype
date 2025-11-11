@@ -47,29 +47,30 @@ name = st.text_input('Enter the Name of user: ')
 no = st.text_input('Enter the receiptent number: ')
 msg_body = st.text_input('enter the message u want to send')
 
-date_str = st.text_input('Enter the date to send the message(YYYY/MM/DD): ')
-time_str = st.text_input('Enter thr time to send (HH:MM): ')
+#date_str = st.text_input('Enter the date to send the message(YYYY/MM/DD): ')
+#time_str = st.text_input('Enter thr time to send (HH:MM): ')
 
 recip_no = '+91' + no
 
 if st.button('Enter to send Msg'):
-    schedule_date = datetime.strptime(f'{date_str} {time_str}', "%Y-%m-%d %H:%M")
-    current_datetime = datetime.now()
+   # schedule_date = datetime.strptime(f'{date_str} {time_str}', "%Y-%m-%d %H:%M")
+   # current_datetime = datetime.now()
 
-    time_diffn = schedule_date - current_datetime
-    delay_sec = time_diffn.total_seconds()
+   # time_diffn = schedule_date - current_datetime
+   # delay_sec = time_diffn.total_seconds()
 
-    if delay_sec <= 0:
-        print('the time is invalid')
-    else:
-        print(f'Message scheduled to send at {schedule_date}')
+   # if delay_sec <= 0:
+    #    print('the time is invalid')
+    #else:
+    #    print(f'Message scheduled to send at {schedule_date}')
 
 
 
         #4. Send Message
         #time.sleep(delay_sec)
-        send_message(recip_no, msg_body)
-        st.success(f"Message scheduled to send at {schedule_date}")
+    send_message(recip_no, msg_body)
+    st.success(f"Message scheduled to send at {schedule_date}")
+
 
 
 
