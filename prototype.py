@@ -26,7 +26,7 @@ def send_message(number, message):
         print(f'Messages sent successfully')
     
     except Exception as e:
-        print('An error occured')
+        print('An error occured')    
 
 
 #UI code
@@ -35,12 +35,12 @@ st.set_page_config(page_title="WhatsApp Automation Tool", page_icon="💬", layo
 
 # --- HEADER ---
 st.title("💬 WhatsApp Automation Tool")
-st.markdown("Easily send personalized WhatsApp messages by uploading an Excel file!")
+st.markdown("Easily send personalized WhatsApp messages..!")
 
 # --- FILE UPLOAD SECTION ---
 name = st.text_input('Enter the Name of user: ')
 no = st.text_input('Enter the receiptent number: ')
-msg_body = st.text_input('enter the message u want to send')
+msg_body = st.text_input('Enter the message u want to send: ')
 
 date_str = st.text_input('Enter the date to send the message(YYYY-MM-DD): ')
 #time_str = st.text_input('Enter thr time to send (HH:MM): ')
@@ -64,7 +64,8 @@ if st.button('Enter to send Msg'):
         #4. Send Message
         #time.sleep(delay_sec)
     send_message(recip_no, msg_body)
-    st.success(f"Message scheduled to send at {schedule_date}")
+    st.success(f"Message send successfully")
+
 
 
 
